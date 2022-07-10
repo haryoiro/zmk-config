@@ -12,7 +12,7 @@ docker_options= \
 	--volume "${config}:/zmk-config:Z" \
 	${zmk_image}
 
-board=nice_nano
+board=nice_nano_v2
 
 codebase:
 	docker run ${docker_options} sh -c '\
@@ -22,7 +22,7 @@ codebase:
 
 $(shields):
 	docker run --rm ${docker_options} \
-		west build /zmk/app --pristine --board "${board}" -- -DSHIELD="$@" -DZMK_CONFIG="/zmk/config"
+		west build -s /zmk/app --board "${board}" -- -DSHIELD="$@" -DZMK_CONFIG="/zmk/config"
 	docker cp zmk-codebase:/zmk/build/zephyr/zmk.uf2 $@.uf2
 
 shell:
