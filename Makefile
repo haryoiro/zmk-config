@@ -1,4 +1,4 @@
-shields=sofle_left sofle_right
+shields=sofle_left sofle_right settings_reset
 config=${PWD}/config
 mountpoint=/media/psf/NICENANO
 zmk_image=zmkfirmware/zmk-dev-arm:3.0-branch
@@ -32,3 +32,5 @@ clean:
 	docker ps -aq --filter name='^zmk' | xargs -r docker container rm
 	docker volume list -q --filter name='zmk' | xargs -r docker volume rm
 	find *.uf2 -type f -delete
+
+all: ${shields}
