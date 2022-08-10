@@ -11,8 +11,8 @@
 #define JP_CIRC     EQUAL       // ^ ~
 #define JP_YEN      INT_YEN     // / |
 #define JP_AT       LBKT        // @ `
-#define JP_LPAR     RS(INT_9)   // )
-#define JP_RPAR     RS(INT_8)   // (
+#define JP_LPAR     RS(N9)   // )
+#define JP_RPAR     RS(N8)   // (
 #define JP_LBRC     RBKT        // }
 #define JP_RBRC     NON_US_HASH // {
 #define JP_SEMI     SEMI        // ; +
